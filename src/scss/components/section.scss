@@ -1,0 +1,19 @@
+ .section{
+    margin-bottom: 50px;
+    padding: 0px 40px;
+ }
+
+.section__title{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+
+}
+.section__body{
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(297.25px,1fr)) ;
+    gap:20px;
+   
+}   

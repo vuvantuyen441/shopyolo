@@ -1,0 +1,13 @@
+.checkbox{
+    color: $txt-second-color;
+    padding: 6px 0px;
+    max-width: 100px ;
+    
+    input{
+       width:15px ;
+       height: 15px;
+    }
+    span{
+        margin-left: 10px;
+    }
+}

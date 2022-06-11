@@ -1,0 +1,73 @@
+.cart{
+   padding-top: $header-height;
+   display: grid;
+   grid-template-columns: 400px 1fr;
+   gap:30px;
+   padding-left: 40px;
+   padding-right: 40px;
+   padding-bottom: 20px;
+
+   @include tablet{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+   }
+
+   @include mobile {
+      padding-left: 20px;
+   }
+   &__left{
+      font-size: 1.5rem;
+      padding-top: 50px;
+
+      @include mobile{
+         font-size: 1.2rem;
+      }
+    
+      &__totalItem{
+         padding-bottom: 20px;
+        
+         span{
+            color: $main-color;
+            font-size: 1.65rem;
+         }
+      }
+      &__totalprice{
+         padding-bottom: 20px;
+         display: flex;
+         justify-content: space-between;
+         span{
+            color: $main-color;
+            @include mobile {
+               padding-left: 15px;
+            }
+         }
+
+         @include mobile {
+            justify-content: unset;        
+         }
+      }
+   &__btn{
+ 
+      button{
+         width: 100%;
+         display: block;
+         outline: none;
+         background-color: $main-color;
+         font-size: 1.5rem;
+         color: $btn-main-color;
+         text-transform:uppercase;
+         font-weight: 500;
+         padding: 15px;
+         border: none;
+         margin-bottom: 20px;
+         cursor: pointer; 
+         
+         @include mobile{  
+              width: 70%;   
+              font-size: 1.25rem; 
+         }
+      }
+
+   }  
+   }
+}

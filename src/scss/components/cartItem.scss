@@ -1,0 +1,85 @@
+.cartItem{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-bottom: 15px;
+
+    @include mobile {
+        flex-direction: column;
+        justify-content: center;
+    }
+   
+    &__info{
+        display: flex;
+        align-items: center;
+
+        &__img{
+            width: 18%;      
+            img{
+                border-radius: 10px;             
+            }
+        } 
+        &__title{
+            margin-left: 20px;
+            @include mobile{
+                font-size: 1.25rem;               
+            }
+        }
+    }
+
+    &__option{
+        display: flex;
+
+        @include mobile {
+            justify-content: center;
+             align-items: center;
+        }
+
+        &__price{
+            margin-right: 50px;
+            min-width: 120px;
+
+            @include mobile{
+                margin-top: 10px;
+                font-size: 1.25rem;
+            }
+           
+        }
+
+        &__del{
+            margin-left: 50px;
+            cursor: pointer;
+
+            @include mobile {
+                margin-left: 10px;
+            }
+        }
+        &__quantity{
+            display: flex;
+
+            @include mobile {          
+                margin-left: -35px;
+            }
+            
+            &__btn{
+                border: 2px solid $txt-second-color;
+                width: 30px;
+                height: 30px;
+                font-size: 1.5rem;
+                font-weight: 500;
+                @include flex(center,center);
+                cursor: pointer;
+            }
+            &__input{
+                border-top: 2px solid $txt-second-color;
+                border-bottom: 2px solid $txt-second-color;
+                width: 60px;
+                height: 30px;
+                @include flex(center,center);
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+    }
+       
+    }
+}

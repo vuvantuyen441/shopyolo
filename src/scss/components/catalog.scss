@@ -1,0 +1,106 @@
+.row{
+    display: grid;
+    grid-template-columns: 297.25px 1fr;
+    padding-top:$header-height;
+
+    @include tablet {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);       
+    }
+  
+}
+.catalog{
+    .hide{
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+
+    }
+    &__filter{
+
+        .header__menu__chevron{
+            top:6px;
+        }
+
+        &.active{
+            transform: translateX(0%);    
+        }
+
+        @include tablet{
+            position: fixed;        
+            z-index: 11;
+            background-color: $main-bg;
+            padding: 50px 50px;
+            margin-left: -40px;
+            margin-top: -40px;
+            height: 50%;
+            overflow: scroll;        
+            transition: transform 0.5s ease;
+            transform: translateX(-100%);
+        }
+
+        &__title{
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+        
+        
+        &__checkbox{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 18px;
+        }
+        &__btn{
+            button{
+                background-color: $main-color;
+                color: $btn-main-color;
+                font-size: 1rem;
+                text-transform: uppercase;
+                cursor: pointer;
+                outline: none;
+                border: 0;
+                padding:  1rem 1.5rem;
+                font-weight: 600;
+                
+            }      
+        }
+    }
+    &__btn{
+        button{
+            background-color: $main-color;
+            color: $btn-main-color;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            outline: none;
+            border: 0;
+            padding:  1rem 1.5rem;
+            font-weight: 600;           
+        }      
+    }
+
+    &__products{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(297.25px,1fr)) ;
+        gap:0px;
+
+        @include tablet {
+            padding-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+}
+
+
+
+
+
+

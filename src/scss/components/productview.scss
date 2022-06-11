@@ -1,0 +1,256 @@
+.productview{
+    display: grid;
+    grid-template-columns: 750px  1fr;
+    gap:20px;
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 400px  1fr;
+        gap: 0px;
+    }
+
+    @include mobile {
+        display: grid;
+        grid-template-columns: 300px;
+    }
+
+    &__image{
+        &__list{
+            @include flex (unset,space-between);
+            
+            &__img{
+                width: 35%;
+                margin-right: 10px;
+                img{
+                    border-radius: 10px;
+                    @include tablet{
+                        height: 200px;
+                    }
+                    @include mobile{
+                        height: unset;
+                    }
+                }
+                
+            }
+            &__img01{
+                margin-left: 10px;  
+                width: 80%;        
+                img{
+                    max-height: 80%;
+                    width: 100%;
+                    border-radius: 10px ;
+                    @include tablet{
+                        height: 500px;
+                    }
+                    @include mobile{
+                        height: unset;
+                    }
+                    
+                }                 
+            }
+        }
+        &__title{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }   
+    }
+
+    &__properties{
+        padding-left: 60px;
+
+        @include tablet {
+            margin-left: -10px;
+            padding-left: 40px;
+        }
+        @include mobile {
+            margin-top: -20px;
+        }
+
+        &__title{
+            font-size: 2.5rem;
+            font-weight: 500;  
+
+            @include tablet{
+                font-size: 2rem;
+            }    
+        }
+        &__price{
+            padding-top: 20px;
+            font-size: 2rem;
+            color: $main-color;          
+            font-weight: 500;
+
+            @include tablet{
+                font-size: 1.5rem;
+            }   
+        }
+        &__colors{    
+            p{
+                font-size: 1.5rem;
+                font-weight: 500;
+                padding-top: 20px;
+                padding-bottom: 10px;
+
+                @include tablet{
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                }  
+            }
+
+            &__list{
+                display: flex;                        
+                .circle{
+                    margin: 0px 8px;
+                    padding: 4px 4px;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    border: 1px solid;
+
+                    @include tablet{              
+                        font-weight: 500;
+                        width: 40px;
+                        height: 40px;
+                    }  
+
+                    &.active{
+                        border: 2px solid $main-color;
+                    }
+        
+                }
+                
+            }           
+        }
+        &__size{
+            p{
+                font-size: 1.5rem;
+                font-weight: 500;
+                padding-bottom: 10px; 
+                padding-top: 20px;
+                @include tablet{
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                }  
+            }
+            &__list{
+                display: flex;
+                .circle{
+                    @include flex(center,center);                
+                    text-transform: uppercase;
+                    font-size: 2rem;
+                    margin: 0px 8px;
+                    padding: 4px 4px;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    border: 1px solid;
+
+                    @include tablet{              
+                        font-weight: 500;
+                        width: 40px;
+                        height: 40px;
+                    }  
+                    &.active{
+                        border: 3px solid $main-color;
+                    }
+        
+                }
+
+            }
+        }
+        &__option{
+
+            p{
+                font-size: 1.5rem;
+                font-weight: 500;
+                padding-bottom: 10px;
+                padding-top: 20px;
+                @include tablet{
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                }  
+            }
+
+            &__quantity{
+                display: flex;
+
+                &__btn{
+                    border: 2px solid $txt-second-color;
+                    width: 30px;
+                    height: 30px;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    @include flex(center,center);
+                }
+                &__input{
+                    border-top: 2px solid $txt-second-color;
+                    border-bottom: 2px solid $txt-second-color;
+                    width: 60px;
+                    height: 30px;
+                    @include flex(center,center);
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                }
+
+            }
+        }
+        &__btn{
+
+            @include tablet {
+                display: flex;
+                min-width: 300px;
+                margin-right: 40px;
+            }
+           
+          
+            button{
+                background-color: $main-color;
+                color: $btn-main-color;
+                font-size: 1rem;
+                text-transform: uppercase;
+                cursor: pointer;
+                outline: none;
+                border: 0;
+                padding:  1rem 1.5rem;
+                font-weight: 600;
+                margin-top: 20px;
+
+                @include mobile{
+                    padding:  0.85rem 1.25rem;
+                }
+
+                &:nth-child(2){
+                    margin-left: 15px;
+                }
+            }
+
+            
+        }
+    }
+
+
+}
+.description{
+    position: relative;
+    top:-100px;
+
+    @include tablet {
+        margin-top: 50px;        
+    }
+
+    @include mobile {
+        margin-top: 120px;
+    }
+    &__title{
+        text-transform: capitalize;
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &__content{
+        font-size: 1.25rem;
+        text-align: justify;
+      
+    }
+}
