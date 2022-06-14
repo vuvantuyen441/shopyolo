@@ -20,6 +20,10 @@ const Catalog = () => {
 
     const [products,setProducts] = useState(productList)
 
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
+
     const handleName = (item) => {
         setName (prve=>{
             const isChecked = name.includes(item.categorySlug)
@@ -81,7 +85,6 @@ const Catalog = () => {
             setColor([]);
             setSizes([]);
         }
-
         const toggleSearch = () => {
             searchRef.current.classList.toggle('active')
         }
