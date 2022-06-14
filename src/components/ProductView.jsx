@@ -23,6 +23,7 @@ const ProductView = (props) => {
         window.scrollTo(0,0)
     },[])
 
+    console.log(data.image01)
     useEffect(()=>{
         setShowImg(data.image01)
     },[data])
