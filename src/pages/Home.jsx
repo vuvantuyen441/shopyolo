@@ -16,7 +16,7 @@ const Home = () => {
     return (
         <Helmet title = 'Trang chủ'>
             {/* {slider} */}
-            <Slider data={SliderData} auto={false} timeOut={3000} />
+            <Slider data={SliderData} auto={true} timeOut={3000} />
             {/* policy section */}
             <Section>
                <SectionBody>
