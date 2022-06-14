@@ -9,6 +9,10 @@ import Section from '../components/Section';
 const Product = () => {
     const {slug} = useParams();
     const productdetail = productData.getProductBySlug(slug);
+
+    React.useEffect(() => {
+        window.scrollTo(0,0)
+    }, [productdetail])
     
     return (
         <div className='product'>

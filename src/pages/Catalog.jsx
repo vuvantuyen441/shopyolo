@@ -19,11 +19,7 @@ const Catalog = () => {
     const searchRef = useRef(null)
 
     const [products,setProducts] = useState(productList)
-
-    useEffect(()=>{
-        window.scrollTo(0,0)
-    },[])
-
+    
     const handleName = (item) => {
         setName (prve=>{
             const isChecked = name.includes(item.categorySlug)
