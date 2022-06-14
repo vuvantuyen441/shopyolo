@@ -250,7 +250,29 @@
     }
     &__content{
         font-size: 1.25rem;
-        text-align: justify;
-      
+        text-align: justify;  
+        overflow: hidden;
+        max-height: 50px; 
+       
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;   
     }
+    .expand{
+        overflow:unset;
+        padding-bottom: 400px;    
+    }
+    &__btn{
+        margin-top: -10px;
+        button{   
+            color: $main-color;      
+            font-size: 1.25rem;         
+            cursor: pointer;
+            outline: none;
+            border: 0;        
+            font-weight: 500;
+            margin-top: 20px;
+        }
+    }
+    
 }

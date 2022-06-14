@@ -4,7 +4,9 @@ import { useDispatch } from 'react-redux';
 import numberWithCommas from '../utils/numberWithCommas';
 import {addItem} from '../redux/productViewSlice'; 
 // chu y import 
-
+import productData from '../assets/fake-data/products';
+import ProductsCard from '../components/ProductsCard';
+import Section,{SectionTitle,SectionBody} from '../components/Section';
 
 const ProductView = (props) => {
    
@@ -15,6 +17,11 @@ const ProductView = (props) => {
     const [size, setSize] = useState(undefined);
     const [quantity, setQuantity] = useState(1); 
     const [showImg, setShowImg] = useState(data.image01)
+    const [expand, setExpand] = useState(false);
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
 
     const check = () => {
         if(color === undefined){
@@ -63,10 +70,6 @@ const ProductView = (props) => {
         }        
     }
    
-    useEffect(()=>{
-        window.scrollTo(0,0)
-    },[])
-
     return (
         <>  
         <div className='productview'>
@@ -133,8 +136,24 @@ const ProductView = (props) => {
             <div className="description__title">
                 Chi Tiết Sản Phẩm
             </div> 
-            <div className="description__content"dangerouslySetInnerHTML={{__html: data.description}} ></div>          
-        </div>      
+            <div className={`description__content ${expand ? 'expand' : ''}`}dangerouslySetInnerHTML={{__html: data.description}} ></div>  
+            <div className='description__btn'  onClick={()=>setExpand(!expand)} >
+                <button>{expand ? 'Thu gọn' : 'Xem thêm'}</button>
+            </div>        
+        </div> 
+        <Section>
+                <SectionTitle>phổ biến</SectionTitle>
+                <SectionBody>
+                    {
+                       productData.getProducts(12).map((item)=>(
+                           <ProductsCard 
+                                key={item.id}
+                                data={item}
+                           />
+                       )) 
+                    }
+                </SectionBody>
+        </Section>     
     </>
     );
 };
