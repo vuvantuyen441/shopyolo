@@ -23,6 +23,10 @@ const ProductView = (props) => {
         window.scrollTo(0,0)
     },[])
 
+    useEffect(()=>{
+        setShowImg(data.image01)
+    },[data])
+
     const check = () => {
         if(color === undefined){
             alert('Vui lòng chọn màu sắc!')
