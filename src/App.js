@@ -26,3 +26,18 @@ function App() {
 }
 
 export default App;
+// // const [data,setData] = useState()
+
+//     useEffect(() => {
+//     const getinfo = async () => {
+//         try{
+//             const response = await axios
+//             .get('https://worksuite.cloodo.com/api/v1/app')
+//             setData(response.data)
+//         }catch{
+//             console.log('error')
+//         }    
+//     }
+//     getinfo();
+//     },[])
+//     console.log(data)
